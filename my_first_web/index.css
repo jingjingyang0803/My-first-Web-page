@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.section {
+    height: 120px;
+    background-color: #F0F1F3;
+    text-align: center;
+    color: #378780;
+}
+
+/* menu main css start */
+.nav {
+    height: 80px;
+    border-bottom: 4px solid #B197FB;
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.menu {
+    background-color: #B197FB;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.menu .fa-solid {
+    margin-right: 10px;
+}
+
+.menu ul {
+    display: inline-flex;
+    list-style: none;
+}
+
+.menu ul li {
+    width: 190px;
+    margin: 10px 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.menu ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+.active, .menu ul li:hover {
+    background: #72B9F9;
+    border-radius: 15px;
+}
+
+.menu .fa {
+    margin-top: -26px;
+    margin-right: -1px;
+}
+
+/* menu main css end */
+
+/* menu sub css start */
+.sub {
+    display: none;
+    font-size: 18px;
+}
+
+.menu ul li:hover .sub {
+    display: block;
+    position: absolute;
+    background: rgba(177, 151, 251, 0.6);
+}
+
+.menu ul li:hover .sub ul {
+    display: block;
+}
+
+.menu ul li:hover .sub ul li {
+    width: 150px;
+    background: transparent;
+}
+
+.menu ul li:hover .sub ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid white;
+}
+
+.menu ul li:hover .sub ul li:hover>a {
+    color: #FFDA23;
+}
+
+.fa-angle-right {
+    float: right;
+    color: white;
+}
+
+/* menu sub css end */
+
+/* menu sub-sub css start */
+.sub-sub {
+    display: none;
+}
+
+.hover-me:hover .sub-sub {
+    display: block;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 150px;
+    background: rgba(177, 151, 251, 0.3);
+}
+
+/* menu sub-sub css end */
+
+/* content css start */
+.content {
+    display: none;
+    padding: 0px 50px;
+}
+
+.current {
+    display: block;
+}
+
+.table {
+    margin-top: -50px;
+    margin-bottom:25px;
+    padding: 0px 50px;
+}
+
+.all .table {
+    margin: 25px auto;
+}
+
+.sorting{
+    margin: 0px auto;
+    padding: 20px 50px;
+    text-align: right;
+}
+
+button {
+    width:150px;
+    height:30px;
+    margin-right: 30px;
+    background-color:  gainsboro;
+    font-size: 20px;
+    font-weight: 550;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #1818a5;
+    font-size: 18px;
+    text-align: center;
+}
+
+thead tr {
+    height: 40px;
+    background-color: pink;
+}
+
+tbody tr {
+    height: 30px;
+    background-color: #62E6BF;
+}
+
+/* row of the cell is highlighted when mouse hover on one cell of the table */
+tbody tr:hover {
+    background-color: #FFDA23;
+}
+
+th,
+td {
+    border: 1px solid #1818a5;
+}
+
+.chart {
+    height: 600px;
+}
+
+.info {
+    text-align: center;
+    color: #378780;
+    padding: 300px;
+}
+
+/* content css end */
+
+.footer {
+    height: 215px;
+    background-color: #F0F1F3;
+    color: #378780;
+    clear: both;
+    text-align: center;
+}

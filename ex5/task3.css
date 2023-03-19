@@ -1,0 +1,54 @@
+body {
+    background-color: gainsboro;
+    font-size: 20px;
+}
+
+div {
+    width: 800px;
+    height: 1000px;
+    background-color: #e0bc8d;
+    margin: 100px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #b4c7e0;
+    font-size: 18px;
+    font-weight: 550;
+    border: white;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+thead tr {
+    height: 30px;
+    background-color: #345555;
+    color: white;
+}
+
+tbody tr {
+    height: 50px;
+    background-color: #25b6ae;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+tr>td:nth-child(3) {
+    text-align: right;
+}
+
+#points {
+    width: 8em;
+}

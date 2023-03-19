@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">s
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student list</title>
+    <script src="task3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="task3.css" />
+
+</head>
+
+<body>
+    <div>
+        <h2>Student list</h2>
+
+        <button type="button" onclick="list()">List all</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Info</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+            </tbody>
+        </table>
+
+        <h2>Add a new student</h2>
+
+        <form action="">
+            <label for="name">Name:</label> <input id="name" type="text">
+            <label for="info">Info:</label> <input id="info" type="text">
+            <label for=" points">Points:</label> <input id="points" type="number" min="0">
+            <button type="reset" onclick="add()">Add</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

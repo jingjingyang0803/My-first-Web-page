@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time</title>
+</head>
+<style>
+    span {
+        display: inline-block;
+        width: 500px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        font-size: 80px;
+    }
+</style>
+
+<body>
+    <span id="current-time"></span>
+    <script>
+        function currentTime() {
+            let d = new Date();
+            let h = d.getHours();// get hours of current time
+            let m = d.getMinutes();// get minutes of current time
+            let s = d.getSeconds();// get seconds of current time
+            s = s < 10 ? '0' + s : s;// the seconds are always presented with two digits
+
+            let time = document.getElementById('current-time');
+            time.innerHTML = h + ':' + m + ':' + s;//use either ':' as the separator character between the hours, minutes, and seconds
+
+            if (s % 2 == 0) {
+                time.style.backgroundColor = '#deb887';// change the background color of the current-time span element to burlywood for each even number of seconds
+            }
+            else {
+                time.style.backgroundColor = '#5f9ea0'; // and cadetblue for each odd number of seconds
+            }
+        }
+        setInterval(currentTime, 1000);// keep the time shown updated once per second
+    </script>
+</body>
+
+</html>
