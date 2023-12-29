@@ -44,3 +44,15 @@ Welcome to the TAMK Weather Station project. This project is designed to provide
 2. **Temperature View**: Shows the latest temperature data. Users can select different intervals like 24 hours, 48 hours, etc.
 3. **Wind Speed View**: Similar to the Temperature view, but displays wind speed data.
 4. **More View**: Users can select the type of measurement and the time interval for more customized data representation.
+
+## **Acknowledgments**
+
+Special thanks to TAMK for providing the backend API and data for this project. Also, thanks to the ECharts library for the charting tools used in this project.
+
+The live website for this project is available at https://jingjingyang0803.github.io/My-first-web-page/.
+
+::: warning ⚠️
+
+The UI dropdown menu for selecting different intervals such as 24 hours, 48 hours, etc., is currently not working due to the API (https://webapi19sa-1.course.tamk.cloud/v1/weather)no longer supporting these options.
+
+:::
