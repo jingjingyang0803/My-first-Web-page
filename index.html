@@ -1,212 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Station</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="weather.js"></script>
+    <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.1/echarts.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="weather.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <section class="section">
-        <br>
-        <h1>Welcome to TAMK Weather Station</h1>
-        <h3>Local Weather Tampere</h3>
-        <h3 id="day"></h3>
+      <br />
+      <h1>Welcome to TAMK Weather Station</h1>
+      <h3>Local Weather Tampere</h3>
+      <h3 id="day"></h3>
     </section>
 
     <nav class="nav">
-        <div class="w menu">
-            <ul>
-                <li class="main all active" onclick="listAll()">
-                    <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+      <div class="w menu">
+        <ul>
+          <li class="main all active" onclick="listAll()">
+            <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+          <li class="main">
+            <a class="T" href="#"
+              ><i class="fa-solid fa-temperature-quarter"></i>Temperature</a
+            >
+            <div class="sub">
+              <ul>
+                <li class="T"><a href="#">Now</a></li>
+                <li class="T"><a href="#">24 hours</a></li>
+                <li class="T"><a href="#">48 hours</a></li>
+                <li class="T"><a href="#">72 hours</a></li>
+                <li class="T"><a href="#">1 week</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="main">
+            <a class="S" href="#"><i class="fa-solid fa-wind"></i>Wind speed</a>
+            <div class="sub">
+              <ul>
+                <li class="S"><a href="#">Now</a></li>
+                <li class="S"><a href="#">24 hours</a></li>
+                <li class="S"><a href="#">48 hours</a></li>
+                <li class="S"><a href="#">72 hours</a></li>
+                <li class="S"><a href="#">1 week</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="main">
+            <a href="#"><i class="fa-solid fa-compass"></i>More</a>
+            <div class="sub">
+              <ul>
+                <li class="hover-me">
+                  <a class="type" href="#">rain</a
+                  ><i class="fa fa-angle-right"></i>
+                  <div class="sub-sub">
+                    <ul>
+                      <li class="period"><a href="#">Now</a></li>
+                      <li class="period"><a href="#">24 hours</a></li>
+                      <li class="period"><a href="#">48 hours</a></li>
+                      <li class="period"><a href="#">72 hours</a></li>
+                      <li class="period"><a href="#">1 week</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li class="main">
-                    <a class="T" href="#"><i class="fa-solid fa-temperature-quarter"></i>Temperature</a>
-                    <div class="sub">
-                        <ul>
-                            <li class="T"><a href="#">Now</a></li>
-                            <li class="T"><a href="#">24 hours</a></li>
-                            <li class="T"><a href="#">48 hours</a></li>
-                            <li class="T"><a href="#">72 hours</a></li>
-                            <li class="T"><a href="#">1 week</a></li>
-                        </ul>
-                    </div>
+                <li class="hover-me">
+                  <a class="type" href="#">wind speed</a
+                  ><i class="fa fa-angle-right"></i>
+                  <div class="sub-sub">
+                    <ul>
+                      <li class="period"><a href="#">Now</a></li>
+                      <li class="period"><a href="#">24 hours</a></li>
+                      <li class="period"><a href="#">48 hours</a></li>
+                      <li class="period"><a href="#">72 hours</a></li>
+                      <li class="period"><a href="#">1 week</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li class="main">
-                    <a class="S" href="#"><i class="fa-solid fa-wind"></i>Wind speed</a>
-                    <div class="sub">
-                        <ul>
-                            <li class="S"><a href="#">Now</a></li>
-                            <li class="S"><a href="#">24 hours</a></li>
-                            <li class="S"><a href="#">48 hours</a></li>
-                            <li class="S"><a href="#">72 hours</a></li>
-                            <li class="S"><a href="#">1 week</a></li>
-                        </ul>
-                    </div>
+                <li class="hover-me">
+                  <a class="type" href="#">wind direction</a
+                  ><i class="fa fa-angle-right"></i>
+                  <div class="sub-sub">
+                    <ul>
+                      <li class="period"><a href="#">Now</a></li>
+                      <li class="period"><a href="#">24 hours</a></li>
+                      <li class="period"><a href="#">48 hours</a></li>
+                      <li class="period"><a href="#">72 hours</a></li>
+                      <li class="period"><a href="#">1 week</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li class="main">
-                    <a href="#"><i class="fa-solid fa-compass"></i>More</a>
-                    <div class="sub">
-                        <ul>
-                            <li class="hover-me">
-                                <a class="type" href="#">rain</a><i class="fa fa-angle-right"></i>
-                                <div class="sub-sub">
-                                    <ul>
-                                        <li class="period"><a href="#">Now</a></li>
-                                        <li class="period"><a href="#">24 hours</a></li>
-                                        <li class="period"><a href="#">48 hours</a></li>
-                                        <li class="period"><a href="#">72 hours</a></li>
-                                        <li class="period"><a href="#">1 week</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="hover-me">
-                                <a class="type" href="#">wind speed</a><i class="fa fa-angle-right"></i>
-                                <div class="sub-sub">
-                                    <ul>
-                                        <li class="period"><a href="#">Now</a></li>
-                                        <li class="period"><a href="#">24 hours</a></li>
-                                        <li class="period"><a href="#">48 hours</a></li>
-                                        <li class="period"><a href="#">72 hours</a></li>
-                                        <li class="period"><a href="#">1 week</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="hover-me">
-                                <a class="type" href="#">wind direction</a><i class="fa fa-angle-right"></i>
-                                <div class="sub-sub">
-                                    <ul>
-                                        <li class="period"><a href="#">Now</a></li>
-                                        <li class="period"><a href="#">24 hours</a></li>
-                                        <li class="period"><a href="#">48 hours</a></li>
-                                        <li class="period"><a href="#">72 hours</a></li>
-                                        <li class="period"><a href="#">1 week</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="hover-me">
-                                <a class="type" href="#">light</a><i class="fa fa-angle-right"></i>
-                                <div class="sub-sub">
-                                    <ul>
-                                        <li class="period"><a href="#">Now</a></li>
-                                        <li class="period"><a href="#">24 hours</a></li>
-                                        <li class="period"><a href="#">48 hours</a></li>
-                                        <li class="period"><a href="#">72 hours</a></li>
-                                        <li class="period"><a href="#">1 week</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="hover-me">
-                                <a class="type" href="#">temperature</a><i class="fa fa-angle-right"></i>
-                                <div class="sub-sub">
-                                    <ul>
-                                        <li class="period"><a href="#">Now</a></li>
-                                        <li class="period"><a href="#">24 hours</a></li>
-                                        <li class="period"><a href="#">48 hours</a></li>
-                                        <li class="period"><a href="#">72 hours</a></li>
-                                        <li class="period"><a href="#">1 week</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <li class="hover-me">
+                  <a class="type" href="#">light</a
+                  ><i class="fa fa-angle-right"></i>
+                  <div class="sub-sub">
+                    <ul>
+                      <li class="period"><a href="#">Now</a></li>
+                      <li class="period"><a href="#">24 hours</a></li>
+                      <li class="period"><a href="#">48 hours</a></li>
+                      <li class="period"><a href="#">72 hours</a></li>
+                      <li class="period"><a href="#">1 week</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li class="main">
-                    <a href="#"><i class="fa-solid fa-user"></i>About author</a>
+                <li class="hover-me">
+                  <a class="type" href="#">temperature</a
+                  ><i class="fa fa-angle-right"></i>
+                  <div class="sub-sub">
+                    <ul>
+                      <li class="period"><a href="#">Now</a></li>
+                      <li class="period"><a href="#">24 hours</a></li>
+                      <li class="period"><a href="#">48 hours</a></li>
+                      <li class="period"><a href="#">72 hours</a></li>
+                      <li class="period"><a href="#">1 week</a></li>
+                    </ul>
+                  </div>
                 </li>
-            </ul>
-        </div>
+              </ul>
+            </div>
+          </li>
+          <li class="main">
+            <a href="#"><i class="fa-solid fa-user"></i>About author</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-
     <div class="w content all current">
-        <div class="table"> </div>
+      <div class="table"></div>
     </div>
 
     <div class="w content temp">
-        <div class="sorting">
-            <button>Ascending</button>
-            <button>Descending</button>
-        </div>
-        <div class="table"> </div>
-        <div class="chart"></div>
+      <div class="sorting">
+        <button>Ascending</button>
+        <button>Descending</button>
+      </div>
+      <div class="table"></div>
+      <div class="chart"></div>
     </div>
 
     <div class="w content speed">
-        <div class="sorting">
-            <button>Ascending</button>
-            <button>Descending</button>
-        </div>
-        <div class="table"> </div>
-        <div class="chart"></div>
+      <div class="sorting">
+        <button>Ascending</button>
+        <button>Descending</button>
+      </div>
+      <div class="table"></div>
+      <div class="chart"></div>
     </div>
 
     <div class="w content more">
-        <div class="sorting">
-            <button>Ascending</button>
-            <button>Descending</button>
-        </div>
-        <div class="table">
-            <h1>Please choose a type ~ </h1>
-        </div>
-        <div class="chart"></div>
+      <div class="sorting">
+        <button>Ascending</button>
+        <button>Descending</button>
+      </div>
+      <div class="table">
+        <h1>Please choose a type ~</h1>
+      </div>
+      <div class="chart"></div>
     </div>
 
     <!-- view 4: info about author -->
     <div class="w content">
-        <div class="info">
-            <h3>Name: Jingjing Yang</h3><br>
-            <h3>Email address: jingjing.yang@tuni.fi</h3><br>
-            <h3>Course: 5G00DM03-3005</h3>
-        </div>
+      <div class="info">
+        <h3>Name: Jingjing Yang</h3>
+        <br />
+        <h3>Email address: jingjing.yang@tuni.fi</h3>
+        <br />
+        <h3>Course: 5G00DM03-3005</h3>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="w">
-            <br>
-            <h3>“Red sky at night, sailors delight. Red sky in morning, sailors take warning.”</h3>
-            <h3>“The higher the clouds, the finer the weather.”</h3>
-            <h3>“Clear Moon, frost soon.”</h3>
-            <h3>“When clouds appear like towers, the Earth is refreshed by frequent showers.”</h3>
-            <h3>“Rainbow in the morning gives you fair warning.”</h3>
-            <h3>“Ring around the moon? Rain real soon.”</h3>
-            <h3>“Rain foretold, long last. Short notice, soon will pass.”</h3>
-        </div>
+      <div class="w">
+        <br />
+        <h3>
+          “Red sky at night, sailors delight. Red sky in morning, sailors take
+          warning.”
+        </h3>
+        <h3>“The higher the clouds, the finer the weather.”</h3>
+        <h3>“Clear Moon, frost soon.”</h3>
+        <h3>
+          “When clouds appear like towers, the Earth is refreshed by frequent
+          showers.”
+        </h3>
+        <h3>“Rainbow in the morning gives you fair warning.”</h3>
+        <h3>“Ring around the moon? Rain real soon.”</h3>
+        <h3>“Rain foretold, long last. Short notice, soon will pass.”</h3>
+      </div>
     </footer>
-
-</body>
-<script>
+  </body>
+  <script>
     // when buttons are on click, sort the table based on the last column
     $("button").click(function () {
-        let switching = true;
-        while (switching) {
-            switching = false;
-            let table = document.querySelector(".current table");
-            let rows = table.rows;
-            for (var i = 1; i < rows.length - 1; i++) {
-                var shouldSwitch = false;
-                let above = rows[i].getElementsByTagName("td")[3];
-                let below = rows[i + 1].getElementsByTagName("td")[3];
-                if ($(this).text() == "Ascending" && Number(above.innerHTML) > Number(below.innerHTML) ||
-                    $(this).text() == "Descending" && Number(above.innerHTML) < Number(below.innerHTML)) {
-                    shouldSwitch = true;
-                    break;
-                }
-            }
-            if (shouldSwitch) {
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-            }
+      let switching = true;
+      while (switching) {
+        switching = false;
+        let table = document.querySelector(".current table");
+        let rows = table.rows;
+        for (var i = 1; i < rows.length - 1; i++) {
+          var shouldSwitch = false;
+          let above = rows[i].getElementsByTagName("td")[3];
+          let below = rows[i + 1].getElementsByTagName("td")[3];
+          if (
+            ($(this).text() == "Ascending" &&
+              Number(above.innerHTML) > Number(below.innerHTML)) ||
+            ($(this).text() == "Descending" &&
+              Number(above.innerHTML) < Number(below.innerHTML))
+          ) {
+            shouldSwitch = true;
+            break;
+          }
         }
-    })
-</script>
-
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    });
+  </script>
 </html>
